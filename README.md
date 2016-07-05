@@ -1,7 +1,11 @@
 # helloqingfeng.github.io
 青光乍现 ❤️ 必露锋芒
 ===================
-http://helloqingfeng.aliapp.com/
+http://helloqingfeng.duapp.com/
+
+个人简历：http://helloqingfeng.github.io/index.html
+
+头条号：http://www.toutiao.com/m6214044258/
 
 Hallo，常用网名：清风明月，喜欢大家叫我***清风***。
 
