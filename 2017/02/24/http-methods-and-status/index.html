@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>常用 HTTP 方法及状态码整理 | Hello清风</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="前端,HTTP,">
+  
+
+  <meta name="description" content="HTTP 为一个通信协议。HTTP 客户端发起请求并创建端口，HTTP 服务器在端口监听客户端的请求。HTTP 服务器在收到请求后则返回状态和所请求的内容。  一、网页浏览全过程（粗浅流程） 域名解析 搜索浏览器自身 DNS 缓存 搜索操作系统自身 DNS 缓存（如上一级未找到或已失效） 读取本地 HOST 文件 （如上一级未找到或已失效，/etc/hosts） 浏览器发起 DNS 系统调用请求">
+<meta name="keywords" content="前端,HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用 HTTP 方法及状态码整理">
+<meta property="og:url" content="http://helloqingfeng.github.io/2017/02/24/http-methods-and-status/index.html">
+<meta property="og:site_name" content="Hello清风">
+<meta property="og:description" content="HTTP 为一个通信协议。HTTP 客户端发起请求并创建端口，HTTP 服务器在端口监听客户端的请求。HTTP 服务器在收到请求后则返回状态和所请求的内容。  一、网页浏览全过程（粗浅流程） 域名解析 搜索浏览器自身 DNS 缓存 搜索操作系统自身 DNS 缓存（如上一级未找到或已失效） 读取本地 HOST 文件 （如上一级未找到或已失效，/etc/hosts） 浏览器发起 DNS 系统调用请求">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ww1.sinaimg.cn/mw690/66101050ly1fd1x389ugvj20zk0m87ca">
+<meta property="og:updated_time" content="2017-02-25T07:48:00.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用 HTTP 方法及状态码整理">
+<meta name="twitter:description" content="HTTP 为一个通信协议。HTTP 客户端发起请求并创建端口，HTTP 服务器在端口监听客户端的请求。HTTP 服务器在收到请求后则返回状态和所请求的内容。  一、网页浏览全过程（粗浅流程） 域名解析 搜索浏览器自身 DNS 缓存 搜索操作系统自身 DNS 缓存（如上一级未找到或已失效） 读取本地 HOST 文件 （如上一级未找到或已失效，/etc/hosts） 浏览器发起 DNS 系统调用请求">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/66101050ly1fd1x389ugvj20zk0m87ca">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <link href="/css/styles.css?v=d671a41f" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?6c4ce55a94f03407a8a82f848fc3dab4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">主页</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">主页</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、网页浏览全过程（粗浅流程）"><span class="toc-text">一、网页浏览全过程（粗浅流程）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、常用-HTTP-方法"><span class="toc-text">二、常用 HTTP 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不常用方法"><span class="toc-text">不常用方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、常见-HTTP-状态码"><span class="toc-text">三、常见 HTTP 状态码</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-http-methods-and-status" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">常用 HTTP 方法及状态码整理</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.02.24</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>qingfeng</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </span>
+
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+        <i class="icon-comment"></i> 
+        <span class="ds-thread-count" data-thread-key="post-http-methods-and-status"><i class="fa fa-spinner fa-spin"></i></span> 条评论
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>HTTP 为一个通信协议。HTTP 客户端发起请求并创建端口，HTTP 服务器在端口监听客户端的请求。<br>HTTP 服务器在收到请求后则返回状态和所请求的内容。</p>
+<p><img src="http://ww1.sinaimg.cn/mw690/66101050ly1fd1x389ugvj20zk0m87ca" alt></p>
+<h1 id="一、网页浏览全过程（粗浅流程）"><a href="#一、网页浏览全过程（粗浅流程）" class="headerlink" title="一、网页浏览全过程（粗浅流程）"></a>一、网页浏览全过程（粗浅流程）</h1><ol>
+<li>域名解析<ol>
+<li>搜索浏览器自身 DNS 缓存</li>
+<li>搜索操作系统自身 DNS 缓存（如上一级未找到或已失效）</li>
+<li>读取本地 HOST 文件 （如上一级未找到或已失效，/etc/hosts）</li>
+<li>浏览器发起 DNS 系统调用请求<ol>
+<li>ISP 服务器查找自身缓存</li>
+<li>ISP 服务器发起迭代（逐域寻找需要的地址）请求</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>得到请求资源的 IP 地址</li>
+<li>发起 HTTP “三次握手”（下面为一个超级简化版）<ol>
+<li>建立连接，等待服务器确认</li>
+<li>服务器接受请求，回复客户</li>
+<li>客户端与服务器连接成功（TCP/IP 连接成功）</li>
+</ol>
+</li>
+<li>客户根据协议发送请求</li>
+<li>服务器更具请求返回客户需求资源</li>
+<li>客户获得资源</li>
+</ol>
+<h1 id="二、常用-HTTP-方法"><a href="#二、常用-HTTP-方法" class="headerlink" title="二、常用 HTTP 方法"></a>二、常用 HTTP 方法</h1><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+<th>是否包含主题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>从服务器获取一份文档</td>
+<td>否</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>向服务器发送需要处理的数据</td>
+<td>是</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>将请求的主题部分储存在服务器上</td>
+<td>是</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>从服务器删除一份文档</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h2 id="不常用方法"><a href="#不常用方法" class="headerlink" title="不常用方法"></a>不常用方法</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+<th>是否包含主题</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HEAD</td>
+<td>只从服务器获取头文档的首部</td>
+<td>否</td>
+</tr>
+<tr>
+<td>TRACE</td>
+<td>对可能经过代理服务器传送到服务器上的报文进行追踪</td>
+<td>否</td>
+</tr>
+<tr>
+<td>OPTIONS</td>
+<td>决定可以在服务器上执行的方法</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="三、常见-HTTP-状态码"><a href="#三、常见-HTTP-状态码" class="headerlink" title="三、常见 HTTP 状态码"></a>三、常见 HTTP 状态码</h1><table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>描述</th>
+<th>代码描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>请求成功，一般用于 GET 和 POST 方法</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>301</td>
+<td>资源移动。所请求资源自动到新的 URL，浏览器自动跳转至新的 URL</td>
+<td>Moved Permanently</td>
+</tr>
+<tr>
+<td>304</td>
+<td>未修改。所请求资源未修改，浏览器读取缓存数据</td>
+<td>Not Modified</td>
+</tr>
+<tr>
+<td>400</td>
+<td>请求语法错误，服务器无法解析</td>
+<td>Bad Request</td>
+</tr>
+<tr>
+<td>403</td>
+<td>禁止访问</td>
+<td>Forbidden</td>
+</tr>
+<tr>
+<td>404</td>
+<td>未找到资源，可以设置个性“404页面”</td>
+<td>Not Found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器内部错误</td>
+<td>Internal Server Error</td>
+</tr>
+<tr>
+<td>502</td>
+<td>网关错误</td>
+<td>Bad gateway</td>
+</tr>
+<tr>
+<td>503</td>
+<td>服务不可用</td>
+<td>Service unavailable</td>
+</tr>
+<tr>
+<td>504</td>
+<td>网关超时</td>
+<td>Gateway timeout</td>
+</tr>
+</tbody>
+</table>
+
+    
+  </div>
+</article>
+
+</div>
+
+
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">勾搭一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，联系清风</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/wechat.jpg" alt="">
+          </li>
+        
+          <li class="item">
+            <img src="/images/weibo.jpg" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+  <section class="duoshuo-comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-http-methods-and-status" 
+      data-title="常用 HTTP 方法及状态码整理" data-url="http://helloqingfeng.github.io/2017/02/24/http-methods-and-status/index.html"></div>
+    <!-- 多说评论框 end -->
+  </section>
+
+
+
+
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"hellogithub"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
