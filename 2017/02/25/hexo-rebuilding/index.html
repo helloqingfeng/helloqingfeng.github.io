@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/66101050ly1fd2szawfzuj20hs07sq36">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/66101050ly1fd2sjp9y5hj20k105hq3q">
-<meta property="og:updated_time" content="2017-02-25T09:36:37.747Z">
+<meta property="og:updated_time" content="2019-09-04T06:17:28.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重装系统后，Hexo博客如何重新部署恢复">
 <meta name="twitter:description" content="今天偶然想到要更新博客了，写文章时发现用不了。原来是电脑重装了系统，Hexo博客需要重新部署恢复。具体该怎么弄呢，就在网上搜索解决办法，网上的内容也是挺乱的。自己就按照某些思路来尝试解决。 还好，没费多大功夫，Hexo博客又重生了。  Hexo博客部署恢复先说下我的情况：电脑重装了系统，hexo博客文件夹还在D盘存着，完好无损。现在就是借助这些文件恢复部署一下就好了。具体方法如下： 一、安装 no">
@@ -215,17 +215,28 @@
 <p>还好，没费多大功夫，Hexo博客又重生了。</p>
 <p><img src="http://ww1.sinaimg.cn/large/66101050ly1fd2szawfzuj20hs07sq36" alt></p>
 <h2 id="Hexo博客部署恢复"><a href="#Hexo博客部署恢复" class="headerlink" title="Hexo博客部署恢复"></a>Hexo博客部署恢复</h2><p>先说下我的情况：电脑重装了系统，hexo博客文件夹还在D盘存着，完好无损。现在就是借助这些文件恢复部署一下就好了。具体方法如下：</p>
-<p>一、安装 node.js 和 git for windows</p>
-<p>二、配置 git 个人信息，生成新的 ssh 密钥：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;helloqingfeng&quot;</span><br><span class="line">git config --global user.email &quot;128994000@qq.com&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;128994000@qq.com&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>一、</strong>安装 node.js 和 git for windows</p>
+<p><strong>二、</strong>配置 git 个人信息，生成新的 ssh 密钥：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;helloqingfeng&quot;</span><br><span class="line">git config --global user.email &quot;128994000@qq.com&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;128994000@qq.com&quot;</span><br></pre></td></tr></table></figure>
 <p>你需要把邮件地址和用户名换成你自己的，然后一路回车，使用默认值即可。</p>
 <p>如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，打开id_rsa.pub文件，复制里面的内容。</p>
-<p>三、将生成的ssh公钥（刚复制的内容）复制到Github的settings里面的ssh选项里去</p>
-<p>四、安装hexo：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></p>
-<p>五、打开原来的hexo博客所在文件夹，只需保留_config.yml，theme/，source/，scaffolds/，package.json，.gitignore 这些项目，删除其他的文件。</p>
-<p>六、然后打开 git bush 运行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
-<p>七、安装部署插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save //hexo d 部署到git插件</span><br></pre></td></tr></table></figure></p>
-<p>八、接下来直接hexo g hexo d试一下是否成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>博客部署恢复完成。</p>
+<p><strong>三、</strong>将生成的ssh公钥（刚复制的内容）复制到Github的settings里面的ssh选项里去。（参考GitHub教程：<a href="https://help.github.com/cn/articles/adding-a-new-ssh-key-to-your-github-account" target="_blank" rel="noopener">新增 SSH 密钥到 GitHub 帐户</a>）</p>
+<p><strong>四、</strong>安装Hexo：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p><strong>五、</strong>打开原来的hexo博客所在文件夹，只需保留_config.yml，theme/，source/，scaffolds/，package.json，.gitignore 这些项目，删除其他的文件。</p>
+<p><strong>六、</strong>然后打开 git bush 运行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p><strong>七、</strong>安装部署插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p><strong>八、</strong>接下来直接hexo g hexo d试一下是否成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>博客部署恢复完成，可以打开网站看一下。</p>
+<p><strong>九、</strong>发表新文章：</p>
+<p>新建 Markdown 文件及文章标题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post “文章名字”</span><br></pre></td></tr></table></figure>
+<p>然后使用 Markdown 软件编辑内容，</p>
+<p>最后上传更新文章：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <h2 id="Hexo部署过程中的难点解决："><a href="#Hexo部署过程中的难点解决：" class="headerlink" title="Hexo部署过程中的难点解决："></a>Hexo部署过程中的难点解决：</h2><p><strong>1、如果博客有RSS订阅和站点地图功能</strong>，请在第七步安装下面两个插件，命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save  //RSS订阅插件</span><br><span class="line">npm install hexo-generator-sitemap --save //站点地图插件</span><br></pre></td></tr></table></figure></p>
 <p><strong>2、安装部署过程中，在git bash中使用<code>hexo g</code>或者<code>hexo d</code>等命令，会报错提示： Cannot find module ‘C:\Program Files\Git\node_modules\hexo-cli\bin\hexo’。</strong><br>如图所示：</p>
 <p><img src="http://ww1.sinaimg.cn/large/66101050ly1fd2sjp9y5hj20k105hq3q" alt></p>
