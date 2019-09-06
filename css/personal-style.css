@@ -1,10 +1,16 @@
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+  src: url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+  font-style: normal;
+  font-weight: 500;
+}
 html.page-home {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  font-size: 16px;
+  font-size: 18px;
   /*background-image: url('/images/back-min.jpg');*/
   background-color: transparent;
   background-size: cover;
@@ -22,6 +28,18 @@ html.page-home {
   font-weight: 400;
   color: #d8171c;
 }
+.content-home hr{
+  background-image:-webkit-linear-gradient(0deg, transparent, #c10f02, transparent);
+}
 .content-home .nav .item a{
   font-size:20px;
+}
+
+.item-year a.text-year{
+color:#f44c17;
+}
+.toolbox .list-toolbox .item-toolbox a{
+  font-weight: 500;
+  font-size: 15px;
+  color: teal;
 }
